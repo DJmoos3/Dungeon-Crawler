@@ -3,14 +3,11 @@ import java.util.Scanner;
 public class Player extends Object
 {
     Scanner scanner = new Scanner(System.in);
-
-    public void player()
-    {
-
-    }
+    String classType;
 
     public void playerCreation()
     {
+        setType("player");
         String choice;
         System.out.println("Welcome to the player creation.");
         System.out.println("Which class do you want to play?");
@@ -21,28 +18,32 @@ public class Player extends Object
         if(choice.equals("1") || choice.equalsIgnoreCase("mage"))
         {
             mage();
+            classType = "mage";
         }
         else if (choice.equals("2") || choice.equalsIgnoreCase("warrior"))
         {
             warrior();
+            classType = "warrior";
         }
         else if(choice.equals("3") || choice.equalsIgnoreCase("barbarian"))
         {
             barbarian();
+            classType = "barbarian";
         }
 
     }
+
     public void mage()
     {
         setHealth(50);
         setDamage(2);
-        setArmour(10);
+        setArmour(2);
     }
     public void warrior()
     {
         setHealth(100);
         setDamage(5);
-        setArmour(40);
+        setArmour(5);
     }
     public void barbarian()
     {
